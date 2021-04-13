@@ -1,16 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Built-in Directives</h1>
+        <p v-text=" 'Some text' "></p>
+        <p v-html=" '<strong>Some strong text</strong>' "></p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h1>Custom Directives</h1>
+        <p v-highlight="'yellow'">Color this</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  
 }
 </script>
 
