@@ -11,7 +11,7 @@
     <div class="row mt-5">
       <div class="col-12">
         <h1>Custom Directives</h1>
-        <p v-highlight="'yellow'">Color this</p>
+        <p v-highlight:background="'green'">Color this</p>
       </div>
     </div>
   </div>

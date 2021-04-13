@@ -8,7 +8,12 @@ const app = createApp(App);
 
 app.directive("highlight", {
     beforeMount(el, binding) {
-        el.style.background = binding.value;
+        // el.style.background = binding.value;
+        if(binding.arg == 'background') {
+            el.style.backgroundColor = binding.value;
+        } else {
+            el.style.color = binding.value;
+        }
     },
 });
 
