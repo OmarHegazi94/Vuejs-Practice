@@ -6,4 +6,10 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const app = createApp(App);
 
+app.config.globalProperties.$filters = {
+    toUppercase(value) {
+        return value.toUpperCase();
+    },
+};
+
 app.mount("#app");

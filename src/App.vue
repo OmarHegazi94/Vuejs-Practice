@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <h1>Filters and Mixins</h1>
+                <p>{{ $filters.toUppercase(text) }}</p>
             </div>
         </div>
     </div>
@@ -11,5 +12,15 @@
 <script>
 export default {
     name: "App",
+    data() {
+      return {
+        text: 'Hello there!'
+      }
+    },
+    filters: {
+      toUppercase(value) {
+        return value.toUpperCase();
+      }
+    }
 };
 </script>
