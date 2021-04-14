@@ -15,25 +15,27 @@
                 <li v-for="(fruit, index) in filteredFruits" :key="index">{{ fruit }}</li>
             </ul>
         </div>
+
+        <br />
+        <hr />
+        <appList></appList>
     </div>
 </template>
 
 <script>
+import List from "./components/List.vue";
+import { fruitMixin } from "./fruitMixin.js";
+
 export default {
     name: "App",
+    components: {
+        appList: List,
+    },
+    mixins: [fruitMixin],
     data() {
         return {
             text: "Hello there!",
-            fruits: ["Apple", "Banana", "Mango", "Melon"],
-            filterText: "",
         };
-    },
-    computed: {
-        filteredFruits() {
-            return this.fruits.filter((element) => {
-                return element.toLowerCase().match(this.filterText);
-            });
-        },
     },
 };
 </script>
