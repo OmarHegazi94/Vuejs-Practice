@@ -16,11 +16,6 @@ export default {
       return {
         text: 'Hello there!'
       }
-    },
-    filters: {
-      toUppercase(value) {
-        return value.toUpperCase();
-      }
     }
 };
 </script>
