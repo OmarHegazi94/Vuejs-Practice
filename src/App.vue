@@ -53,7 +53,7 @@ export default {
         submit() {
             if (this.user.username && this.user.email) {
                 axios
-                    .post("https://vue-http-898d3-default-rtdb.firebaseio.com/data.json", this.user)
+                    .post('', this.user)
                     .then((response) => {
                         console.log(response);
                         this.messageClass = 'alert-success'
@@ -73,7 +73,7 @@ export default {
             }
         },
         fetchData() {
-            axios.get('https://vue-http-898d3-default-rtdb.firebaseio.com/data.json')
+            axios.get('')
                 .then(response => {
                     const data = response.data
                     const resultArray = [];
