@@ -12,4 +12,10 @@ app.config.globalProperties.$filters = {
     },
 };
 
+app.mixin({
+    created() {
+        console.log('global mixin created hook')
+    }
+});
+
 app.mount("#app");

@@ -13,6 +13,9 @@
 import { fruitMixin } from '../fruitMixin.js'
 export default {
     name: "List",
-    mixins: [fruitMixin]
+    mixins: [fruitMixin],
+    created() {
+        console.log('Inside List Created Component');
+    }
 };
 </script>
