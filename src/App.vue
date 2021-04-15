@@ -23,6 +23,12 @@
 
                     <button @click.prevent="submit" type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <br> <hr>
+
+                <button @click="fetchData" class="btn btn-primary">Get Data</button>
+                <ul class="list-group my-4">
+                    <li class="list-group-item" v-for="(user, index) in users" :key="index">{{ user.username }} - {{ user.email }}</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -38,6 +44,7 @@ export default {
                 username: "",
                 email: "",
             },
+            users: [],
             messeage: "",
             messageClass: "",
         };
@@ -65,6 +72,21 @@ export default {
                 this.messeage = "Please Fill up the info";
             }
         },
+        fetchData() {
+            axios.get('https://vue-http-898d3-default-rtdb.firebaseio.com/data.json')
+                .then(response => {
+                    const data = response.data
+                    const resultArray = [];
+
+                    for(let key in data) {
+                        resultArray.push(data[key])
+                    }
+                    this.users = resultArray;
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
     },
 };
 </script>
