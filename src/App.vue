@@ -7,6 +7,8 @@
             </div>
         </div>
 
+        <button @click="fruits.push('Barries')">Add New Fruit</button>
+
         <div class="row">
             <div class="col-12">
                 <input type="text" v-model="filterText" />
