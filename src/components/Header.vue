@@ -16,11 +16,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <router-link to="/user/1" active-class="active" class="nav-link">User 1</router-link>
-                    </li>
-
-                    <li class="nav-item">
-                        <router-link to="/user/2" active-class="active" class="nav-link">User 2</router-link>
+                        <router-link to="/user" active-class="active" class="nav-link">User</router-link>
                     </li>
                 </ul>
             </div>
