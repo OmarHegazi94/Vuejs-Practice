@@ -4,7 +4,7 @@ import User from './components/user/User.vue'
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/user', component: User }
+    { path: '/user/:id', component: User }
 ];
 
 
