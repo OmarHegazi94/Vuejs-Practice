@@ -8,7 +8,7 @@
         Edit User
     </router-link> -->
     <router-link 
-        :to="{ name: 'userEdit', params: { id: $route.params.id } }"
+        :to="{ name: 'userEdit', params: { id: $route.params.id }, query: { local: 'en', q: 100 } }"
         class="btn btn-primary">
         Edit User
     </router-link>
