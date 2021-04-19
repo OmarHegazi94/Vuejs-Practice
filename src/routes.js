@@ -27,6 +27,12 @@ const routes = [
             { path: ":id/edit", component: UserEdit, name: "userEdit" },
         ],
     },
+    {
+        path: '/redirect-me', redirect: '/user'
+    },
+    {
+        path: '/:pathMatch(.*)', redirect: '/', name: 'bad-not-found'
+    },
 ];
 
 const router = createRouter({
