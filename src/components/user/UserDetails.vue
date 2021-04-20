@@ -20,9 +20,20 @@ export default {
                 name: "userEdit",
                 params: { id: this.$route.params.id },
                 query: { local: "en", q: 100 },
-                hash: '#data'
+                hash: "#data",
             },
         };
+    },
+    beforeRouteEnter(to, from, next) {
+        console.log('before route enter User Details')
+        next();
+
+        // If you want to access a property in the component before you enter it
+        // pass a callback function
+
+        // next((vm) => {
+        //     vm.link;
+        // });
     },
 };
 </script>

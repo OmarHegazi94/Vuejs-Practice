@@ -23,7 +23,15 @@ const routes = [
         },
         children: [
             { path: "", component: UserStart, name: "userStart" },
-            { path: ":id", component: UserDetails, name: "userDetails" },
+            {
+                path: ":id",
+                component: UserDetails,
+                name: "userDetails",
+                beforeEnter: (to, from, next) => {
+                    console.log("Inside Route Setup");
+                    next();
+                },
+            },
             { path: ":id/edit", component: UserEdit, name: "userEdit" },
         ],
     },
@@ -54,6 +62,11 @@ const router = createRouter({
         //     top: 2000
         // };
     },
+});
+
+router.beforeEach((to, from, next) => {
+    console.log("global beforeEach");
+    next();
 });
 
 export default router;
