@@ -28,16 +28,32 @@ const routes = [
         ],
     },
     {
-        path: '/redirect-me', redirect: '/user'
+        path: "/redirect-me",
+        redirect: "/user",
     },
     {
-        path: '/:pathMatch(.*)', redirect: '/', name: 'bad-not-found'
+        path: "/:pathMatch(.*)",
+        redirect: "/",
+        name: "bad-not-found",
     },
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        }
+        return {
+            el: to.hash,
+            behavior: "smooth",
+        };
+        // return {
+        //     left: 0,
+        //     top: 2000
+        // };
+    },
 });
 
 export default router;

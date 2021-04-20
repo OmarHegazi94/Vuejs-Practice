@@ -7,11 +7,13 @@
             <div class="col-12">
                 <h1>Vue Router</h1>
                 <hr />
-                <router-view v-slot="{ Component }">
+                <router-view>
+                </router-view>
+                <!-- <router-view v-slot="{ Component }">
                     <transition name="slide">
                         <component :is="Component"></component>
                     </transition>
-                </router-view>
+                </router-view> -->
 
                 <router-view name="header-bottom"></router-view>
             </div>
