@@ -1,10 +1,16 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "./components/Home.vue";
 import Header from "./components/Header.vue";
-import User from "./components/user/User.vue";
-import UserStart from "./components/user/UserStart.vue";
-import UserEdit from "./components/user/UserEdit.vue";
-import UserDetails from "./components/user/UserDetails.vue";
+
+// import User from "./components/user/User.vue";
+// import UserStart from "./components/user/UserStart.vue";
+// import UserEdit from "./components/user/UserEdit.vue";
+// import UserDetails from "./components/user/UserDetails.vue";
+
+const User = () => import(/* webpackChunkName: "user" */ './components/user/User');
+const UserStart = () => import(/* webpackChunkName: "user" */ './components/user/UserStart');
+const UserEdit = () => import(/* webpackChunkName: "user" */ './components/user/UserEdit');
+const UserDetails = () => import(/* webpackChunkName: "user" */ './components/user/UserDetails');
 
 const routes = [
     {
