@@ -1,18 +1,35 @@
 <template>
   <div>
-      <button class="btn btn-primary" @click="inc">Increment</button>
-      <button class="btn btn-primary" @click="dec">Decrement</button>
+      <p>another counter</p>
+      <button class="btn btn-primary pr-1" @click="increment(amount)">Increment</button>
+      <button class="btn btn-primary" @click="decrement(50)">Decrement</button>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+// No longer need to use mutations directly
+
+// import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
+    data() {
+        return {
+            amount: 100
+        }
+    },
     methods: {
-        ...mapMutations({
-            inc: 'increment',
-            dec: 'decrement'
-        })
+        // Both works the same
+        ...mapActions([
+            'increment',
+            'decrement'
+        ]),
+        // increment() {
+        //     this.$store.dispatch('increment', this.amount)
+        // }
+        // what map Actions does behind the scenes
+        // inc(){
+        //     this.$store.dispatch('increment', { amount: 100 })
+        // }
     }
 }
 </script>
