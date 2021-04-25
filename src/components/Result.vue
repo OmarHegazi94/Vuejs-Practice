@@ -3,15 +3,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import * as types from '../store/types';
 export default {
     computed: {
-        counter() {
-            return this.$store.getters.doubleCounter;
-        }
+        // This won't work with types
+
+        // ...mapGetters([
+        //     'doubleCounter',
+        //     'stringCounter'
+        // ]),
+
+        ...mapGetters({
+            counter: types.DOUBLE_COUNTER,
+        })
     }
 }
 </script>
 
-<style>
-
-</style>
